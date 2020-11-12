@@ -41,5 +41,5 @@ app.get('/sign-s3', (req, res) => {
   });
 
   app.get('/test', (req, res) => {
-      res.send("Hello World");
+      res.json({username: 'Hello'});
   })

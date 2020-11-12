@@ -17,11 +17,11 @@ const S3_BUCKET = process.env.S3_BUCKET;
 aws.config.region = 'us-east-1';
 
 app.get('/sign-s3', (req, res) => {
-    const s3 = new AWS.S3({
-        accessKeyId: process.env.AWSAccessKeyId,
-        secretAccessKey: process.env.AWSSecretKey,
-        signatureVersion: 'v4'
+    const s3 = new aws.S3({
+        accessKeyId: keys.accessKeyId,
+        secretAccessKey: keys.secretAccessKey
     });
+    
     const fileName = req.query['file-name'];
     const fileType = req.query['file-type'];
     const s3Params = {

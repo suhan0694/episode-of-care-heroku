@@ -1,0 +1,25 @@
+{
+  "name": "episode-of-care-heroku",
+  "version": "1.0.0",
+  "description": "NodeJS server for CS529 final project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "keywords": [
+    "NodeJS",
+    "S3",
+    "Express"
+  ],
+  "dependencies": {
+    "aws-sdk": "2.x",
+    "ejs": "2.x",
+    "express": "4.x"
+  },
+  "engines": {
+    "node": "12.x"
+  },
+  "author": "Suhan Nath",
+  "license": "ISC"
+}

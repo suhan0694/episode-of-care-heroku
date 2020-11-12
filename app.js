@@ -10,7 +10,9 @@ app.use(express.static('./public'));
 app.engine('html', require('ejs').renderFile);
 app.listen(process.env.PORT || 3000);
 
-const S3_BUCKET = process.env.S3_BUCKET;
+console.log("App Started at Port 3000")
+
+const S3_BUCKET = 'episodeofcare';
 
 aws.config.region = 'us-east-1';
 
@@ -21,10 +23,12 @@ app.get('/sign-s3', (req, res) => {
     const s3Params = {
       Bucket: S3_BUCKET,
       Key: fileName,
-      Expires: 60,
+      Expires: 200,
       ContentType: fileType,
       ACL: 'public-read'
     };
+
+    console.log(s3Params)
   
     s3.getSignedUrl('putObject', s3Params, (err, data) => {
       if(err){

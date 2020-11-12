@@ -2,6 +2,9 @@ const express = require('express');
 const aws = require('aws-sdk');
 
 const app = express();
+const cors = require('cors');
+
+app.use(cors());
 app.set('views', './views');
 app.use(express.static('./public'));
 app.engine('html', require('ejs').renderFile);
@@ -37,6 +40,6 @@ app.get('/sign-s3', (req, res) => {
     });
   });
 
-  app.get('/', (req, res) => {
+  app.get('/test', (req, res) => {
       res.send("Hello World");
   })

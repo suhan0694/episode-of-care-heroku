@@ -18,8 +18,8 @@ aws.config.region = 'us-east-1';
 
 app.get('/sign-s3', (req, res) => {
     const s3 = new aws.S3({
-        accessKeyId: keys.accessKeyId,
-        secretAccessKey: keys.secretAccessKey
+        accessKeyId: process.env.AWSAccessKeyId,
+        secretAccessKey: process.env.AWSSecretKey
     });
     
     const fileName = req.query['file-name'];
